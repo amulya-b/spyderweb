@@ -20,8 +20,8 @@ class ResultGraphPage extends Component {
                     let links = [];
                     for (let key in response.data.query.pages) {
                         let element = response.data.query.pages[key];
-                        if (element.title !== input
-                            && element.title !== response.data.query.redirects[0].to) {
+                        if (element.title !== input && response.data.query.hasOwnProperty("redirects") &&
+                            element.title !== response.data.query.redirects[0].to) {
                             continue;
                         }
                         links = element.links;

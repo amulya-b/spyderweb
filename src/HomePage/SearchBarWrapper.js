@@ -79,9 +79,11 @@ class SearchBarWrapper extends Component {
             value,
             onChange: this.onChange
         };
+        let input = this.state.value.replace(/ /g, "%20");
+        let url = "/results/search=" + input;
         return (
             <div style = {{margin: '0', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
-                <div style={{float: 'left', 'margin-right': '10px'}}>
+                <div style={{float: 'left', marginRight: '10px'}}>
                     <Autosuggest
                         suggestions={suggestions}
                         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -92,7 +94,7 @@ class SearchBarWrapper extends Component {
                     />
                 </div>
                 <Button bsStyle="success" onClick = {this.handleSearch} style={{float: 'right'}}>
-                    <Link style={{color: "white"}} to="/results">Search</Link>
+                    <Link style={{color: "white"}} to={url}>Search</Link>
                 </Button>
             </div>
         )

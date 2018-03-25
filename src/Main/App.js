@@ -50,7 +50,7 @@ class App extends Component {
                 </Navbar>
                 <Route exact path="/" render = {() => <Home getSearchResults={this.getSearchResults.bind(this)} />} />
                 <Route path="/about" component = {About} />
-                <Route path="/results" render = {() => <ResultGraphPage searchInput = {this.state.searchInput} />} />
+                <Route path="/results/search=:searchInput" component = {ResultGraphPage} />
             </div>
         );
     }

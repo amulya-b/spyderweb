@@ -73,7 +73,7 @@ class SearchBarWrapper extends Component {
     };
 
     render() {
-        const { value, suggestions, isLoading } = this.state;
+        const { value, suggestions } = this.state;
         const inputProps = {
             placeholder: "What are you looking for?",
             value,
@@ -83,6 +83,8 @@ class SearchBarWrapper extends Component {
         let url = "/results/search=" + input;
         return (
             <div style = {{margin: '0', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+                <h1>spyderweb</h1>
+                <br/>
                 <div style={{float: 'left', marginRight: '10px'}}>
                     <Autosuggest
                         suggestions={suggestions}
